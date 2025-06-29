@@ -1,45 +1,102 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SebShadowSecrets • Shadow Cult HQ</title>
-  <meta name="description" content="A digital cult manipulating the algorithm while exposing its chains. Fix your glitchy brain and join the resistance.">
-  <meta property="og:image" content="logo.png">
-  <link rel="icon" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+  <!-- META / OG -->
+  <meta name="description" content="A digital cult manipulating the algorithm while exposing its chains. Fix your glitchy brain and join the resistance." />
+  <meta property="og:title" content="SebShadowSecrets" />
+  <meta property="og:description" content="We master the algorithm while exposing its chains." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:url" content="https://sebshadowsecrets.com" />
+
+  <!-- ASSETS -->
+  <link rel="icon" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet" />
+
+  <!-- STYLE -->
   <style>
-    :root{--bg:#000;--fg:#e11d48;--txt:#d8d8d8}
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Rubik Glitch',sans-serif}
-    body{background:var(--bg);color:var(--txt);text-align:center;overflow-x:hidden}
-    video.bg{position:fixed;inset:0;object-fit:cover;filter:brightness(.15) contrast(1.3);z-index:-2}
-    body::before{content:'';position:fixed;inset:0;background:url('noise.png') repeat;opacity:.25;mix-blend-mode:overlay;z-index:-1}
-    h1{font-size:clamp(3.2rem,9vw,6.2rem);margin-top:18vh;color:#fff;animation:glitch 3s infinite steps(8)}
-    @keyframes glitch{0%,100%{clip-path:inset(0 0 100% 0)}25%{clip-path:inset(60% 0 20% 0)}50%{clip-path:inset(10% 0 70% 0)}75%{clip-path:inset(80% 0 5% 0)}}
-    .tag{margin:1rem auto 2rem;font-size:clamp(1rem,2.4vw,1.25rem);max-width:32ch;text-transform:uppercase}
-    .cta button{padding:.9rem 2.3rem;border:1px solid var(--fg);background:transparent;color:var(--fg);cursor:pointer;transition:.2s}
-    .cta button:hover{background:var(--fg);color:#000}
-    section{padding:4rem 1rem;border-top:1px solid #222;max-width:940px;margin:auto}
-    section h2{color:var(--fg);font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:.7rem}
-    section p{max-width:46ch;margin:0 auto 1.3rem;line-height:1.35}
-    .grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-    .card{border:1px solid #222;padding:1.3rem;background:#0a0a0a;transition:.2s}
-    .card:hover{transform:translateY(-6px);box-shadow:0 0 15px var(--fg)}
-    .card h3{color:var(--fg);font-size:1.25rem;margin-bottom:.35rem}
-    .card p{font-size:.8rem}
-    .card a{display:inline-block;margin-top:.8rem;padding:.45rem 1.1rem;border:1px solid var(--fg);color:var(--fg);text-decoration:none;font-size:.78rem}
-    .card a:hover{background:var(--fg);color:#000}
-    .links a{display:inline-block;margin:.45rem 1rem;color:var(--fg);text-decoration:none;border-bottom:1px solid transparent;font-size:.9rem}
-    .links a:hover{border-color:var(--fg)}
-    footer{margin:3.5rem 0 1rem;font-size:.7rem;opacity:.5;cursor:pointer}
+    :root { --bg:#000; --fg:#e11d48; --txt:#d8d8d8; }
+    *     { box-sizing:border-box; margin:0; padding:0; font-family:'Rubik Glitch',sans-serif; }
+    body  { background:var(--bg); color:var(--txt); text-align:center; overflow-x:hidden; }
+
+    /* BACKGROUND VIDEO & NOISE */
+    video.bg { position:fixed; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.15) contrast(1.3); z-index:-2; }
+    body::before { content:''; position:fixed; inset:0; background:url('noise.png') repeat; opacity:.23; mix-blend-mode:overlay; z-index:-1; }
+
+    /* TV-GLITCH HEADER */
+    h1.tv-glitch {
+      position:relative; font-size:clamp(3.2rem,9vw,6.2rem); margin-top:18vh; color:#fff; letter-spacing:.5px;
+      text-shadow:0 0 4px #fff, 0 0 8px #fff, 0 0 12px var(--fg); -webkit-text-stroke:1px rgba(0,0,0,.7);
+      animation:tvGlitch 4s infinite steps(8);
+    }
+    h1.tv-glitch::before,
+    h1.tv-glitch::after {
+      content:attr(data-text); position:absolute; inset:0; pointer-events:none; mix-blend-mode:overlay; opacity:.25;
+    }
+    h1.tv-glitch::before { color:#ff1d58; transform:translateX(2px); }
+    h1.tv-glitch::after  { color:#00eaff; transform:translateX(-2px); }
+
+    /* Scan-lines overlay */
+    body::after {
+      content:''; position:fixed; inset:0;
+      background:repeating-linear-gradient(180deg,transparent 0 2px, rgba(0,0,0,.25) 2px 4px);
+      mix-blend-mode:overlay; pointer-events:none; z-index:-1; animation:scan 12s linear infinite;
+    }
+
+    /* HERO SUBTAG + CTA */
+    .tag { margin:1rem auto 2rem; font-size:clamp(1rem,2.4vw,1.25rem); max-width:32ch; text-transform:uppercase; }
+    .cta button {
+      padding:.9rem 2.3rem; border:1px solid var(--fg); background:transparent; color:var(--fg);
+      cursor:pointer; transition:.2s;
+    }
+    .cta button:hover { background:var(--fg); color:#000; }
+
+    /* SECTIONS */
+    section { padding:4rem 1rem; border-top:1px solid #222; max-width:950px; margin:auto; }
+    section h2 { color:var(--fg); font-size:clamp(1.5rem,4vw,2.4rem); margin-bottom:.7rem; }
+    section p { max-width:46ch; margin:0 auto 1.3rem; line-height:1.35; }
+
+    /* GRID CARDS */
+    .grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+    .card { border:1px solid #222; padding:1.3rem; background:#0a0a0a; transition:.2s; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 0 15px var(--fg); }
+    .card h3 { color:var(--fg); font-size:1.25rem; margin-bottom:.35rem; }
+    .card p { font-size:.8rem; }
+    .card a {
+      display:inline-block; margin-top:.8rem; padding:.45rem 1.1rem; border:1px solid var(--fg);
+      color:var(--fg); font-size:.78rem; text-decoration:none;
+    }
+    .card a:hover { background:var(--fg); color:#000; }
+
+    /* TEXT LINKS */
+    .links a { display:inline-block; margin:.45rem 1rem; color:var(--fg); text-decoration:none; border-bottom:1px solid transparent; font-size:.9rem; }
+    .links a:hover { border-color:var(--fg); }
+
+    footer { margin:3.5rem 0 1rem; font-size:.7rem; opacity:.5; cursor:pointer; }
+
+    /* KEYFRAMES */
+    @keyframes tvGlitch {
+      0%,100% { clip-path:inset(0 0 100% 0); }
+      25% { clip-path:inset(60% 0 20% 0); }
+      50% { clip-path:inset(10% 0 70% 0); }
+      75% { clip-path:inset(80% 0 5% 0); }
+    }
+    @keyframes scan { 0%{ transform:translateY(-100%);} 100%{ transform:translateY(100%);} }
   </style>
 </head>
 <body>
+
+<!-- STATIC VIDEO BG -->
 <video class="bg" autoplay muted loop playsinline>
   <source src="https://cdn.pixabay.com/vimeo/265322661/static-98747.mp4?width=640&hash=3d3e2c329" type="video/mp4">
 </video>
 
 <!-- HERO -->
-<h1>SebShadowSecrets</h1>
+<h1 class="tv-glitch" data-text="SebShadowSecrets">SebShadowSecrets</h1>
 <p class="tag">We’ve operated off-grid for years. Only now do we broadcast.</p>
+
 <div class="cta">
   <form action="YOUR_CONVERTKIT_FORM_URL" method="post">
     <button type="submit">Join the Cult</button>
@@ -55,26 +112,25 @@
 <!-- SHADOW STACK -->
 <section>
   <h2>🧪 Shadow Stack: Fix Your Glitchy Brain</h2>
-  <p>Daily stack to override the programming. Click to unlock each compound.</p>
-
+  <p>Daily stack to override the programming. Click each compound.</p>
   <div class="grid">
-    <div class="card"><h3>Curcumin + Black Pepper</h3><p>Boosts BDNF, melts inflammation, crosses brain barrier.</p><a href="AFFILIATE_CURCUMIN" target="_blank">Unlock</a></div>
-    <div class="card"><h3>Ginger Root</h3><p>Raises dopamine & serotonin, calms gut-brain axis.</p><a href="AFFILIATE_GINGER" target="_blank">Unlock</a></div>
-    <div class="card"><h3>Cayenne Pepper</h3><p>Thermogenic, amplifies absorption, floods endorphins.</p><a href="AFFILIATE_CAYENNE" target="_blank">Unlock</a></div>
-    <div class="card"><h3>N-A-C</h3><p>Detox neuro-toxins, elevates glutathione, anti-craving.</p><a href="AFFILIATE_NAC" target="_blank">Unlock</a></div>
-    <div class="card"><h3>EAAs + Glutamine</h3><p>Rebuilds muscle & gut lining, fuels brain.</p><a href="AFFILIATE_EAA" target="_blank">Unlock</a></div>
-    <div class="card"><h3>Creatine</h3><p>More ATP to neurons → faster recall, better mood.</p><a href="AFFILIATE_CREATINE" target="_blank">Unlock</a></div>
-    <div class="card"><h3>Lion’s Mane</h3><p>Stimulates nerve-growth factor, repairs pathways.</p><a href="AFFILIATE_LIONSMANE" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Curcumin&nbsp;+ Piperine</h3><p>Boosts BDNF • slashes inflammation</p><a href="AFFILIATE_CURCUMIN" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Ginger Root</h3><p>Dopamine &amp; serotonin boost • gut-brain calm</p><a href="AFFILIATE_GINGER" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Cayenne Pepper</h3><p>Thermogenic • amplifies absorption</p><a href="AFFILIATE_CAYENNE" target="_blank">Unlock</a></div>
+    <div class="card"><h3>N-A-C</h3><p>Detox • raises glutathione • anti-craving</p><a href="AFFILIATE_NAC" target="_blank">Unlock</a></div>
+    <div class="card"><h3>EAAs&nbsp;&amp; Glutamine</h3><p>Rebuilds gut wall • fuels muscle & mind</p><a href="AFFILIATE_EAA" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Creatine</h3><p>+ATP for neurons • faster recall • mood lift</p><a href="AFFILIATE_CREATINE" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Lion’s Mane</h3><p>Stimulates NGF • repairs pathways</p><a href="AFFILIATE_LIONSMANE" target="_blank">Unlock</a></div>
   </div>
 </section>
 
 <!-- THE VAULT -->
 <section>
   <h2>🔒 The Vault</h2>
-  <p>Redacted PDFs, limited posters, hidden drops. First leak: <em>Black Dossier – Vol 1</em>.</p>
+  <p>Redacted PDFs • Limited posters • Hidden drops.</p>
   <div class="links">
-     <a href="https://gumroad.com/YOUR_DOSSIER" target="_blank">Download Dossier</a>
-     <a href="https://gumroad.com/YOUR_POSTER"  target="_blank">Poster #1 (100 left)</a>
+     <a href="https://gumroad.com/YOUR_DOSSIER" target="_blank">Black Dossier Vol.1</a>
+     <a href="https://gumroad.com/YOUR_POSTER"  target="_blank">Poster #1 (Limited)</a>
   </div>
 </section>
 
@@ -85,10 +141,10 @@
   <a href="https://YOUR_POD_STORE" class="links" target="_blank">Shop Drop ↗</a>
 </section>
 
-<!-- TOOLS / AFFILIATE HUB -->
+<!-- TOOLS HUB -->
 <section>
   <h2>⚙️ Tools We Wield</h2>
-  <p>AI voices, glitch plug-ins, horror fonts. Use them – or stay an NPC.</p>
+  <p>AI voices, glitch plug-ins, horror fonts & more.</p>
   <a href="https://kit.co/YOUR_KIT_PAGE" class="links" target="_blank">View Toolkit ↗</a>
 </section>
 
@@ -107,4 +163,5 @@
 <footer onclick="this.textContent=this.textContent==='cipher://0x1F7...'? 'they are watching':'cipher://0x1F7...'">
   cipher://0x1F7... • © <script>document.write(new Date().getFullYear())</script> SebShadowSecrets
 </footer>
+
 </body></html>
