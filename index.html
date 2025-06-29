@@ -1,103 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>SebShadowSecrets – We Master the Algorithm</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Bebas+Neue&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#000; --fg:#e11d48; --txt:#d4d4d8;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:var(--bg);color:var(--txt);font-family:'Bebas Neue',sans-serif;
-  display:flex;flex-direction:column;align-items:center;min-height:100vh;overflow-x:hidden
-}
-/* STATIC VIDEO BG */
-video.bg{
-  position:fixed;z-index:-2;width:100vw;height:100vh;object-fit:cover;filter:brightness(.2) contrast(1.2);
-}
-/* NOISE OVERLAY */
-body::before{
-  content:'';position:fixed;inset:0;background:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNScgaGVpZ2h0PSc1JyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxmaWx0ZXIgaWQ9J25vaXNlJz48ZmVUdXJidWxlbmNlIHR5cGU9J3R1cnJidWxlbmNlJyBbcng9JzAnIHJ5PScwJyBiaXRlc1BlclNlYz0nMScgZ3JhcGh5dHlwZT0naGFyZScvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyBmaWxsPScjZmZmJyBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PS4wNiIvPjwvc3ZnPg==') repeat;mix-blend-mode:overlay;opacity:.25;pointer-events:none;z-index:-1;
-}
-h1{
-  font-family:'Rubik Glitch',cursive;font-size:clamp(2.8rem,8vw,6rem);
-  position:relative;line-height:1.05;color:#fff;margin-top:18vh;text-align:center;
-  animation:glitch 3s infinite steps(10);
-}
-@keyframes glitch{
-  0%,100%{clip-path:inset(0 0 100% 0)}
-  10% {clip-path:inset(50% 0 30% 0)}
-  20% {clip-path:inset(10% 0 80% 0)}
-  30% {clip-path:inset(80% 0 5% 0)}
-  40% {clip-path:inset(40% 0 45% 0)}
-  50% {clip-path:inset(60% 0 25% 0)}
-  60% {clip-path:inset(5% 0 85% 0)}
-  70% {clip-path:inset(30% 0 55% 0)}
-  80% {clip-path:inset(65% 0 18% 0)}
-  90% {clip-path:inset(25% 0 60% 0)}
-}
-.tag{
-  font-size:clamp(1rem,3vw,1.25rem);margin:.8rem auto 0;max-width:30ch;text-transform:uppercase;
-  transition:.3s;color:var(--txt);cursor:pointer
-}
-.tag:hover{color:var(--fg);filter:blur(.5px) saturate(1.4);content:'WE ARE WATCHING';}
-.frame{
-  width:85%;max-width:380px;margin:2.5rem 0;border:2px solid var(--fg);box-shadow:0 0 20px var(--fg);aspect-ratio:9/16;overflow:hidden
-}
-iframe{width:100%;height:100%}
-.btn{display:inline-block;margin:1.3rem .4rem;padding:.65rem 2rem;border:1px solid var(--fg);color:var(--fg);text-decoration:none;letter-spacing:.06em;transition:.2s}
-.btn:hover{background:var(--fg);color:#000}
-.section{padding:3rem 1rem;border-top:1px solid #222;text-align:center;max-width:800px;width:92%}
-.section h2{font-size:clamp(1.3rem,4vw,2.2rem);margin-bottom:.8rem;color:var(--fg)}
-footer{font-size:.65rem;opacity:.45;margin-top:auto;padding:1.2rem 0;cursor:pointer}
-</style>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SebShadowSecrets • Shadow Cult HQ</title>
+  <meta name="description" content="A digital cult manipulating the algorithm while exposing its chains. Fix your glitchy brain and join the resistance.">
+  <meta property="og:image" content="logo.png">
+  <link rel="icon" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#000;--fg:#e11d48;--txt:#d8d8d8}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Rubik Glitch',sans-serif}
+    body{background:var(--bg);color:var(--txt);text-align:center;overflow-x:hidden}
+    video.bg{position:fixed;inset:0;object-fit:cover;filter:brightness(.15) contrast(1.3);z-index:-2}
+    body::before{content:'';position:fixed;inset:0;background:url('noise.png') repeat;opacity:.25;mix-blend-mode:overlay;z-index:-1}
+    h1{font-size:clamp(3.2rem,9vw,6.2rem);margin-top:18vh;color:#fff;animation:glitch 3s infinite steps(8)}
+    @keyframes glitch{0%,100%{clip-path:inset(0 0 100% 0)}25%{clip-path:inset(60% 0 20% 0)}50%{clip-path:inset(10% 0 70% 0)}75%{clip-path:inset(80% 0 5% 0)}}
+    .tag{margin:1rem auto 2rem;font-size:clamp(1rem,2.4vw,1.25rem);max-width:32ch;text-transform:uppercase}
+    .cta button{padding:.9rem 2.3rem;border:1px solid var(--fg);background:transparent;color:var(--fg);cursor:pointer;transition:.2s}
+    .cta button:hover{background:var(--fg);color:#000}
+    section{padding:4rem 1rem;border-top:1px solid #222;max-width:940px;margin:auto}
+    section h2{color:var(--fg);font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:.7rem}
+    section p{max-width:46ch;margin:0 auto 1.3rem;line-height:1.35}
+    .grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+    .card{border:1px solid #222;padding:1.3rem;background:#0a0a0a;transition:.2s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 0 15px var(--fg)}
+    .card h3{color:var(--fg);font-size:1.25rem;margin-bottom:.35rem}
+    .card p{font-size:.8rem}
+    .card a{display:inline-block;margin-top:.8rem;padding:.45rem 1.1rem;border:1px solid var(--fg);color:var(--fg);text-decoration:none;font-size:.78rem}
+    .card a:hover{background:var(--fg);color:#000}
+    .links a{display:inline-block;margin:.45rem 1rem;color:var(--fg);text-decoration:none;border-bottom:1px solid transparent;font-size:.9rem}
+    .links a:hover{border-color:var(--fg)}
+    footer{margin:3.5rem 0 1rem;font-size:.7rem;opacity:.5;cursor:pointer}
+  </style>
 </head>
 <body>
 <video class="bg" autoplay muted loop playsinline>
   <source src="https://cdn.pixabay.com/vimeo/265322661/static-98747.mp4?width=640&hash=3d3e2c329" type="video/mp4">
 </video>
 
+<!-- HERO -->
 <h1>SebShadowSecrets</h1>
-<p class="tag">We master the algorithm while exposing its chains.</p>
-
-<div class="frame">
-  <iframe src="https://www.youtube-nocookie.com/embed/YOUTUBE_ID?autoplay=0&mute=1&loop=1&playlist=YOUTUBE_ID" title="SebShadowSecrets Teaser" frameborder="0" allowfullscreen></iframe>
+<p class="tag">We’ve operated off-grid for years. Only now do we broadcast.</p>
+<div class="cta">
+  <form action="YOUR_CONVERTKIT_FORM_URL" method="post">
+    <button type="submit">Join the Cult</button>
+  </form>
 </div>
 
-<!-- EMAIL OPT-IN -->
-<form action="YOUR_CONVERTKIT_FORM_URL" method="post">
-  <input style="padding:.6rem .8rem;border:none;width:68%;max-width:240px;margin-top:.5rem" type="email" name="email_address" placeholder="Enter email – join the cult" required>
-  <button class="btn">Unlock Secrets</button>
-</form>
-
-<a class="btn" href="https://www.youtube.com/@SebShadowSecrets" target="_blank">SUBSCRIBE ↗</a>
-
-<div class="social">
-  <a class="youtube" href="https://youtube.com/@SebShadowSecrets" target="_blank"></a>
-  <a class="tiktok" href="https://tiktok.com/@SebShadowSecrets" target="_blank"></a>
-  <a class="instagram" href="https://instagram.com/SebShadowSecrets" target="_blank"></a>
-  <a class="pinterest" href="https://pinterest.com/SebShadowSecrets" target="_blank"></a>
-</div>
-
-<section class="section" id="vault">
-  <h2>The Vault</h2>
-  <p>Classified files coming soon.<br>Unlock when we reach <strong>50 000</strong> followers.</p>
+<!-- LATEST SHORT -->
+<section>
+  <h2>Latest Transmission</h2>
+  <iframe width="300" height="500" src="https://www.youtube-nocookie.com/embed/YOUR_SHORT_ID" title="Cult Intro Short" frameborder="0" allowfullscreen></iframe>
 </section>
 
-<section class="section" id="merch">
-  <h2>Merch Drop</h2>
-  <p>Limited-run <em>SSS</em> sigil apparel.<br>Only for those who wear the shadow.</p>
+<!-- SHADOW STACK -->
+<section>
+  <h2>🧪 Shadow Stack: Fix Your Glitchy Brain</h2>
+  <p>Daily stack to override the programming. Click to unlock each compound.</p>
+
+  <div class="grid">
+    <div class="card"><h3>Curcumin + Black Pepper</h3><p>Boosts BDNF, melts inflammation, crosses brain barrier.</p><a href="AFFILIATE_CURCUMIN" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Ginger Root</h3><p>Raises dopamine & serotonin, calms gut-brain axis.</p><a href="AFFILIATE_GINGER" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Cayenne Pepper</h3><p>Thermogenic, amplifies absorption, floods endorphins.</p><a href="AFFILIATE_CAYENNE" target="_blank">Unlock</a></div>
+    <div class="card"><h3>N-A-C</h3><p>Detox neuro-toxins, elevates glutathione, anti-craving.</p><a href="AFFILIATE_NAC" target="_blank">Unlock</a></div>
+    <div class="card"><h3>EAAs + Glutamine</h3><p>Rebuilds muscle & gut lining, fuels brain.</p><a href="AFFILIATE_EAA" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Creatine</h3><p>More ATP to neurons → faster recall, better mood.</p><a href="AFFILIATE_CREATINE" target="_blank">Unlock</a></div>
+    <div class="card"><h3>Lion’s Mane</h3><p>Stimulates nerve-growth factor, repairs pathways.</p><a href="AFFILIATE_LIONSMANE" target="_blank">Unlock</a></div>
+  </div>
 </section>
 
-<footer onclick="cycle()">© <span id="yr"></span> SebShadowSecrets • <span id="cipher">01010011</span></footer>
+<!-- THE VAULT -->
+<section>
+  <h2>🔒 The Vault</h2>
+  <p>Redacted PDFs, limited posters, hidden drops. First leak: <em>Black Dossier – Vol 1</em>.</p>
+  <div class="links">
+     <a href="https://gumroad.com/YOUR_DOSSIER" target="_blank">Download Dossier</a>
+     <a href="https://gumroad.com/YOUR_POSTER"  target="_blank">Poster #1 (100 left)</a>
+  </div>
+</section>
 
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-const seq = ['01010011','53','S']; let step=0;
-function cycle(){step=(step+1)%seq.length;document.getElementById('cipher').textContent=seq[step];}
-</script>
-</body>
-</html>
+<!-- MERCH -->
+<section>
+  <h2>🩸 Cult Merch</h2>
+  <p>Wear the sigil. Spread the signal.</p>
+  <a href="https://YOUR_POD_STORE" class="links" target="_blank">Shop Drop ↗</a>
+</section>
+
+<!-- TOOLS / AFFILIATE HUB -->
+<section>
+  <h2>⚙️ Tools We Wield</h2>
+  <p>AI voices, glitch plug-ins, horror fonts. Use them – or stay an NPC.</p>
+  <a href="https://kit.co/YOUR_KIT_PAGE" class="links" target="_blank">View Toolkit ↗</a>
+</section>
+
+<!-- GIVEAWAY -->
+<section>
+  <h2>🎁 Initiation Giveaway</h2>
+  <iframe src="https://gleam.io/YOUR_GLEAM_ID" width="100%" height="500" frameborder="0"></iframe>
+</section>
+
+<!-- TIP JAR -->
+<section>
+  <h2>☕ Tip the Cult</h2>
+  <iframe src="https://ko-fi.com/sebshadowsecrets/?hidefeed=true&widget=true&embed=true" style="border:none;width:340px;height:112px;"></iframe>
+</section>
+
+<footer onclick="this.textContent=this.textContent==='cipher://0x1F7...'? 'they are watching':'cipher://0x1F7...'">
+  cipher://0x1F7... • © <script>document.write(new Date().getFullYear())</script> SebShadowSecrets
+</footer>
+</body></html>
