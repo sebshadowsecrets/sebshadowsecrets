@@ -1,80 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SebShadowSecrets – Shadow-Coded Truths</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!----  Social preview  -->
-  <meta property="og:title" content="SebShadowSecrets">
-  <meta property="og:description" content="Forbidden knowledge. Psychological warfare. Learn the system from inside the shadow.">
-  <meta property="og:image" content="logo.png"><!-- replace with final logo file -->
-  <style>
-    :root{
-      --bg:#000;
-      --fg:#e11d48;   /* crimson */
-      --txt:#d1d5db;  /* slate-200 */
-      --noise:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+PHJlY3Qgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJScgZmlsbD0nI2ZmZicgcGF0dGVybi1pZD0nbm9pc2UnIG9wYWNpdHk9JzAuMDEnLz48L3N2Zz4=');
-    }
-    *{box-sizing:border-box;margin:0;padding:0;font-family: 'Anton', sans-serif;}
-    body{background:var(--bg);color:var(--txt);display:flex;flex-direction:column;align-items:center;min-height:100vh;text-align:center}
-    .hero{position:relative;padding:8rem 1rem 4rem}
-    .hero h1{font-size:clamp(2.8rem,9vw,6rem);letter-spacing:.05em;position:relative;line-height:1.1}
-    .hero h1::after{
-      content:'';position:absolute;inset:0;background:var(--fg);mix-blend-mode:overlay;
-      animation:glitch 2s infinite steps(8);
-    }
-    @keyframes glitch{
-      0%,100%{clip-path:inset(0 0 100% 0)}
-      10%  {clip-path:inset(40% 0 40% 0)}
-      20%  {clip-path:inset(60% 0 20% 0)}
-      30%  {clip-path:inset(10% 0 70% 0)}
-      40%  {clip-path:inset(80% 0 5% 0)}
-      50%  {clip-path:inset(45% 0 40% 0)}
-      60%  {clip-path:inset(5% 0 80% 0)}
-      70%  {clip-path:inset(50% 0 30% 0)}
-      80%  {clip-path:inset(25% 0 55% 0)}
-      90%  {clip-path:inset(70% 0 15% 0)}
-    }
-    p.tag{font-size:clamp(1rem,3vw,1.3rem);max-width:28ch;margin:.8rem auto 2rem;line-height:1.3}
-    .frame{width:90%;max-width:400px;aspect-ratio:9/16;overflow:hidden;border:2px solid var(--fg);box-shadow:0 0 20px var(--fg);}
-    iframe{width:100%;height:100%}
-    .btn{margin:2.5rem auto 1.2rem;display:inline-block;padding:.7rem 2rem;border:1px solid var(--fg);color:var(--fg);text-decoration:none;letter-spacing:.04em;transition:.2s}
-    .btn:hover{background:var(--fg);color:#000}
-    .social{display:flex;gap:1.4rem;margin-bottom:3rem}
-    .social a{width:32px;height:32px;background:var(--fg);mask-size:cover;-webkit-mask-size:cover}
-    a.tiktok {mask:url('https://simpleicons.org/icons/tiktok.svg')}
-    a.youtube{mask:url('https://simpleicons.org/icons/youtube.svg')}
-    a.instagram{mask:url('https://simpleicons.org/icons/instagram.svg')}
-    a.pinterest{mask:url('https://simpleicons.org/icons/pinterest.svg')}
-    footer{font-size:.7rem;opacity:.4;margin-top:auto;padding-bottom:.8rem}
-    body::before{content:'';position:fixed;inset:0;background:var(--noise);opacity:.04;pointer-events:none}
-  </style>
+<meta charset="UTF-8">
+<title>SebShadowSecrets – We Master the Algorithm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000; --fg:#e11d48; --txt:#d4d4d8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--bg);color:var(--txt);font-family:'Bebas Neue',sans-serif;
+  display:flex;flex-direction:column;align-items:center;min-height:100vh;overflow-x:hidden
+}
+/* STATIC VIDEO BG */
+video.bg{
+  position:fixed;z-index:-2;width:100vw;height:100vh;object-fit:cover;filter:brightness(.2) contrast(1.2);
+}
+/* NOISE OVERLAY */
+body::before{
+  content:'';position:fixed;inset:0;background:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNScgaGVpZ2h0PSc1JyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxmaWx0ZXIgaWQ9J25vaXNlJz48ZmVUdXJidWxlbmNlIHR5cGU9J3R1cnJidWxlbmNlJyBbcng9JzAnIHJ5PScwJyBiaXRlc1BlclNlYz0nMScgZ3JhcGh5dHlwZT0naGFyZScvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyBmaWxsPScjZmZmJyBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PS4wNiIvPjwvc3ZnPg==') repeat;mix-blend-mode:overlay;opacity:.25;pointer-events:none;z-index:-1;
+}
+h1{
+  font-family:'Rubik Glitch',cursive;font-size:clamp(2.8rem,8vw,6rem);
+  position:relative;line-height:1.05;color:#fff;margin-top:18vh;text-align:center;
+  animation:glitch 3s infinite steps(10);
+}
+@keyframes glitch{
+  0%,100%{clip-path:inset(0 0 100% 0)}
+  10% {clip-path:inset(50% 0 30% 0)}
+  20% {clip-path:inset(10% 0 80% 0)}
+  30% {clip-path:inset(80% 0 5% 0)}
+  40% {clip-path:inset(40% 0 45% 0)}
+  50% {clip-path:inset(60% 0 25% 0)}
+  60% {clip-path:inset(5% 0 85% 0)}
+  70% {clip-path:inset(30% 0 55% 0)}
+  80% {clip-path:inset(65% 0 18% 0)}
+  90% {clip-path:inset(25% 0 60% 0)}
+}
+.tag{
+  font-size:clamp(1rem,3vw,1.25rem);margin:.8rem auto 0;max-width:30ch;text-transform:uppercase;
+  transition:.3s;color:var(--txt);cursor:pointer
+}
+.tag:hover{color:var(--fg);filter:blur(.5px) saturate(1.4);content:'WE ARE WATCHING';}
+.frame{
+  width:85%;max-width:380px;margin:2.5rem 0;border:2px solid var(--fg);box-shadow:0 0 20px var(--fg);aspect-ratio:9/16;overflow:hidden
+}
+iframe{width:100%;height:100%}
+.btn{display:inline-block;margin:1.3rem .4rem;padding:.65rem 2rem;border:1px solid var(--fg);color:var(--fg);text-decoration:none;letter-spacing:.06em;transition:.2s}
+.btn:hover{background:var(--fg);color:#000}
+.section{padding:3rem 1rem;border-top:1px solid #222;text-align:center;max-width:800px;width:92%}
+.section h2{font-size:clamp(1.3rem,4vw,2.2rem);margin-bottom:.8rem;color:var(--fg)}
+footer{font-size:.65rem;opacity:.45;margin-top:auto;padding:1.2rem 0;cursor:pointer}
+</style>
 </head>
 <body>
-  <div class="hero">
-    <h1>SebShadowSecrets</h1>
-    <p class="tag">We master the algorithm<br>while exposing its chains.</p>
-  </div>
+<video class="bg" autoplay muted loop playsinline>
+  <source src="https://cdn.pixabay.com/vimeo/265322661/static-98747.mp4?width=640&hash=3d3e2c329" type="video/mp4">
+</video>
 
-  <!-- Replace YOUTUBE_ID with the ID of a teaser Short or a playlist -->
-  <div class="frame">
-    <iframe src="https://www.youtube-nocookie.com/embed/YOUTUBE_ID?autoplay=0&mute=1&loop=1&playlist=YOUTUBE_ID"
-      title="SebShadowSecrets Teaser" frameborder="0" allowfullscreen></iframe>
-  </div>
+<h1>SebShadowSecrets</h1>
+<p class="tag">We master the algorithm while exposing its chains.</p>
 
-  <!-- Optional: replace # with your ConvertKit form action -->
-  <!-- <form action="#" method="post"><input type="email" placeholder="Enter email for new drops"><button class="btn">Join the Cult</button></form> -->
+<div class="frame">
+  <iframe src="https://www.youtube-nocookie.com/embed/YOUTUBE_ID?autoplay=0&mute=1&loop=1&playlist=YOUTUBE_ID" title="SebShadowSecrets Teaser" frameborder="0" allowfullscreen></iframe>
+</div>
 
-  <a href="https://www.youtube.com/@SebShadowSecrets" class="btn" target="_blank">SUBSCRIBE &nbsp;↗</a>
+<!-- EMAIL OPT-IN -->
+<form action="YOUR_CONVERTKIT_FORM_URL" method="post">
+  <input style="padding:.6rem .8rem;border:none;width:68%;max-width:240px;margin-top:.5rem" type="email" name="email_address" placeholder="Enter email – join the cult" required>
+  <button class="btn">Unlock Secrets</button>
+</form>
 
-  <div class="social">
-    <a class="youtube"   href="https://www.youtube.com/@SebShadowSecrets"   target="_blank"></a>
-    <a class="tiktok"    href="https://www.tiktok.com/@SebShadowSecrets"    target="_blank"></a>
-    <a class="instagram" href="https://www.instagram.com/SebShadowSecrets"   target="_blank"></a>
-    <a class="pinterest" href="https://www.pinterest.com/SebShadowSecrets"   target="_blank"></a>
-  </div>
+<a class="btn" href="https://www.youtube.com/@SebShadowSecrets" target="_blank">SUBSCRIBE ↗</a>
 
-  <footer>&copy; <span id="yr"></span> SebShadowSecrets • <span style="user-select:none">THEY ARE WATCHING</span></footer>
-  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<div class="social">
+  <a class="youtube" href="https://youtube.com/@SebShadowSecrets" target="_blank"></a>
+  <a class="tiktok" href="https://tiktok.com/@SebShadowSecrets" target="_blank"></a>
+  <a class="instagram" href="https://instagram.com/SebShadowSecrets" target="_blank"></a>
+  <a class="pinterest" href="https://pinterest.com/SebShadowSecrets" target="_blank"></a>
+</div>
+
+<section class="section" id="vault">
+  <h2>The Vault</h2>
+  <p>Classified files coming soon.<br>Unlock when we reach <strong>50 000</strong> followers.</p>
+</section>
+
+<section class="section" id="merch">
+  <h2>Merch Drop</h2>
+  <p>Limited-run <em>SSS</em> sigil apparel.<br>Only for those who wear the shadow.</p>
+</section>
+
+<footer onclick="cycle()">© <span id="yr"></span> SebShadowSecrets • <span id="cipher">01010011</span></footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const seq = ['01010011','53','S']; let step=0;
+function cycle(){step=(step+1)%seq.length;document.getElementById('cipher').textContent=seq[step];}
+</script>
 </body>
 </html>
