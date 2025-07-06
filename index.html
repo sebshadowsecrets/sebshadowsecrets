@@ -1,162 +1,132 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SebShadowSecrets • Unglitch Your Brain</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SebShadowSecrets // The Vault</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;700&display=swap');
 
-<meta name="description" content="Unglitch your brain. Join the cult. Rewrite the code.">
-<meta property="og:title" content="SebShadowSecrets – Unglitch Your Brain">
-<meta property="og:description" content="We master the algorithm while exposing its chains.">
-<meta property="og:image" content="logo.png"><meta property="og:url" content="https://sebshadowsecrets.com">
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #e0d0c0;
+      font-family: 'Spectral', serif;
+      overflow-x: hidden;
+    }
 
-<link rel="icon" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    header {
+      background: linear-gradient(to right, #0a0a0a, #1a0a0a);
+      padding: 1rem 2rem;
+      text-align: center;
+      color: #f11;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #300;
+    }
 
-<style>
-:root{--bg:#000;--matrix:#00ff90;--crimson:#e11d48;--txt:#d8d8d8}
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Titillium Web',sans-serif}
-body{background:var(--bg);color:var(--txt);text-align:center;overflow-x:hidden}
+    .vault {
+      padding: 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
 
-/* Static background video + noise */
-video.bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.12) contrast(1.4);z-index:-2}
-body::before{content:'';position:fixed;inset:0;background:url('noise.png') repeat;opacity:.22;mix-blend-mode:overlay;z-index:-1}
+    .insight {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
 
-/* Matrix main header */
-h1.matrix{font-size:clamp(3rem,9vw,6rem);margin-top:15vh;color:var(--matrix);letter-spacing:.05em;
-  text-shadow:0 0 6px var(--matrix),0 0 16px var(--matrix);
-  position:relative;overflow:hidden}
-h1.matrix::after{content:'';position:absolute;inset:0;background:
-  repeating-linear-gradient(180deg,rgba(0,255,144,.12) 0 2px,transparent 2px 4px);
-  animation:rain 12s linear infinite;mix-blend-mode:hard-light;pointer-events:none}
-@keyframes rain{0%{background-position:0 -100vh}100%{background-position:0 100vh}}
+    .next {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #111;
+      color: #f33;
+      padding: 1rem 2rem;
+      border: 1px solid #f33;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
 
-/* Crimson sub-header */
-h2.tagline{color:var(--crimson);font-size:clamp(1.3rem,3.5vw,2rem);margin:.8rem auto 1.8rem;text-transform:uppercase}
+    .next:hover {
+      background: #f33;
+      color: #000;
+    }
 
-/* Rotating quote bar */
-.quote-wrap{height:1.8rem;overflow:hidden;margin-bottom:2.5rem}
-.quote-list{display:inline-block;animation:rotate 20s linear infinite}
-.quote{height:1.8rem;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#aaa}
-@keyframes rotate{
-  0%,18%   {transform:translateY(0)}
-  20%,38%  {transform:translateY(-1.8rem)}
-  40%,58%  {transform:translateY(-3.6rem)}
-  60%,78%  {transform:translateY(-5.4rem)}
-  80%,98%  {transform:translateY(-7.2rem)}
-  100%     {transform:translateY(0)}
-}
+    .countdown {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      color: #ccc;
+      text-align: center;
+    }
 
-/* CTA button */
-.cta button{padding:.8rem 2.2rem;border:1px solid var(--crimson);background:transparent;color:var(--crimson);cursor:pointer;transition:.25s}
-.cta button:hover{background:var(--crimson);color:#000}
+    .adsense-box {
+      width: 100%;
+      margin: 3rem 0;
+      background: #111;
+      height: 100px;
+      border: 2px dashed #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
 
-/* Sections */
-section{padding:4rem 1rem;border-top:1px solid #222;max-width:950px;margin:auto}
-section h2{color:var(--crimson);font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:.6rem}
-section p{max-width:46ch;margin:0 auto 1.3rem;line-height:1.35}
-
-/* Grid cards */
-.grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.card{border:1px solid #222;padding:1.3rem;background:#0a0a0a;transition:.2s}
-.card:hover{transform:translateY(-6px);box-shadow:0 0 15px var(--crimson)}
-.card h3{color:var(--crimson);font-size:1.22rem;margin-bottom:.3rem}
-.card p{font-size:.8rem}
-.card a{display:inline-block;margin-top:.8rem;padding:.45rem 1.15rem;border:1px solid var(--crimson);color:var(--crimson);font-size:.78rem;text-decoration:none}
-.card a:hover{background:var(--crimson);color:#000}
-
-/* Text links */
-.links a{display:inline-block;margin:.45rem 1rem;color:var(--crimson);text-decoration:none;border-bottom:1px solid transparent;font-size:.9rem}
-.links a:hover{border-color:var(--crimson)}
-
-footer{margin:3.5rem 0 1rem;font-size:.7rem;opacity:.55;cursor:pointer}
-</style>
+    footer {
+      font-size: 0.8rem;
+      color: #333;
+      text-align: center;
+      padding: 2rem 0;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Static glitch video -->
-<video class="bg" autoplay muted loop playsinline>
-  <source src="https://cdn.pixabay.com/vimeo/265322661/static-98747.mp4?width=640&hash=3d3e2c329" type="video/mp4">
-</video>
+  <header>
+    SEB SHADOW SECRETS // THE VAULT
+  </header>
 
-<!-- HERO -->
-<h1 class="matrix">SebShadowSecrets</h1>
-<h2 class="tagline">Unglitch Your Brain</h2>
+  <div class="vault">
+    <div class="insight">
+      <strong>SECRET #01:</strong><br />
+      The moment you feel guilt for saying no, they've won. <br /><br />
+      Manipulators weaponize your empathy. They don’t want love. They want control wrapped in kindness.
+    </div>
 
-<div class="quote-wrap">
-  <div class="quote-list">
-    <div class="quote">Never stop being too much.</div>
-    <div class="quote">They couldn’t handle your signal.</div>
-    <div class="quote">Some minds weren’t meant to sit still.</div>
-    <div class="quote">Yeah sex is cool, but have u ever f--ked the system?</div>
-    <div class="quote">Your attention span isn’t broken. The world is boring.</div>
+    <div class="adsense-box">
+      [ Your AdSense code goes here ]
+    </div>
+
+    <a href="" class="next" onclick="reloadPage()">UNLOCK NEXT SECRET →</a>
+
+    <div class="countdown" id="countdown"></div>
   </div>
-</div>
 
-<div class="cta">
-  <form action="YOUR_CONVERTKIT_FORM_URL" method="post">
-    <button type="submit">Join the Cult</button>
-  </form>
-</div>
+  <footer>
+    © 2025 SebShadowSecrets. All rights reserved. Educational purposes only.
+  </footer>
 
-<!-- LATEST SHORT -->
-<section>
-  <h2>Latest Transmission</h2>
-  <iframe width="300" height="500" src="https://www.youtube-nocookie.com/embed/YOUR_SHORT_ID" title="Cult Intro Short" frameborder="0" allowfullscreen></iframe>
-</section>
+  <script>
+    function reloadPage() {
+      location.reload();
+    }
 
-<!-- SHADOW STACK -->
-<section>
-  <h2>🧪 Shadow Stack</h2>
-  <p>Daily compounds to fix your glitchy, bugged brain.</p>
-  <div class="grid">
-    <div class="card"><h3>Curcumin + Piperine</h3><p>Boosts BDNF • melts inflammation</p><a href="AFFILIATE_CURCUMIN">Unlock</a></div>
-    <div class="card"><h3>Ginger Root</h3><p>Dopamine &amp; serotonin boost</p><a href="AFFILIATE_GINGER">Unlock</a></div>
-    <div class="card"><h3>Cayenne Pepper</h3><p>Thermogenic, enhances absorption</p><a href="AFFILIATE_CAYENNE">Unlock</a></div>
-    <div class="card"><h3>N-A-C</h3><p>Detox • raises glutathione</p><a href="AFFILIATE_NAC">Unlock</a></div>
-    <div class="card"><h3>EAAs + Glutamine</h3><p>Rebuilds gut wall & muscle</p><a href="AFFILIATE_EAA">Unlock</a></div>
-    <div class="card"><h3>Creatine</h3><p>ATP for neurons • faster recall</p><a href="AFFILIATE_CREATINE">Unlock</a></div>
-    <div class="card"><h3>Lion’s Mane</h3><p>Nerve-growth factor stimulator</p><a href="AFFILIATE_LIONSMANE">Unlock</a></div>
-  </div>
-</section>
+    const countdown = document.getElementById('countdown');
+    let seconds = 300; // 5 minutes
 
-<!-- THE VAULT -->
-<section>
-  <h2>🔒 The Vault</h2>
-  <p>Redacted PDFs • Limited posters • Hidden drops.</p>
-  <div class="links">
-    <a href="https://gumroad.com/YOUR_DOSSIER">Black Dossier&nbsp;Vol.&nbsp;1</a>
-    <a href="https://gumroad.com/YOUR_POSTER">Poster&nbsp;#1 (Limited)</a>
-  </div>
-</section>
+    function updateCountdown() {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      countdown.textContent = `Page expires in ${mins}:${secs.toString().padStart(2, '0')}`;
+      if (seconds > 0) seconds--;
+      else location.reload(); // force ad reload
+    }
 
-<!-- MERCH -->
-<section>
-  <h2>🩸 Cult Merch</h2>
-  <p>Wear the sigil. Spread the signal.</p>
-  <a href="https://YOUR_POD_STORE" class="links">Shop Drop ↗</a>
-</section>
+    setInterval(updateCountdown, 1000);
+  </script>
 
-<!-- TOOLS -->
-<section>
-  <h2>⚙️ Tools We Wield</h2>
-  <p>AI voices, glitch plug-ins, horror fonts—use the same weapons.</p>
-  <a href="https://kit.co/YOUR_KIT_PAGE" class="links">View Toolkit ↗</a>
-</section>
-
-<!-- GIVEAWAY -->
-<section>
-  <h2>🎁 Initiation Giveaway</h2>
-  <iframe src="https://gleam.io/YOUR_GLEAM_ID" width="100%" height="500" frameborder="0"></iframe>
-</section>
-
-<!-- TIP JAR -->
-<section>
-  <h2>☕ Tip the Cult</h2>
-  <iframe src="https://ko-fi.com/sebshadowsecrets/?hidefeed=true&widget=true&embed=true" style="border:none;width:340px;height:112px;"></iframe>
-</section>
-
-<footer onclick="this.textContent=this.textContent==='cipher://0x1F7...'
-  ?'they are watching':'cipher://0x1F7...'">
-  cipher://0x1F7... • © <script>document.write(new Date().getFullYear())</script> SebShadowSecrets
-</footer>
-
-</body></html>
+</body>
+</html>
