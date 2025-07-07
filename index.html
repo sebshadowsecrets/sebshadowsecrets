@@ -2,131 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SebShadowSecrets // The Vault</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;700&display=swap');
-
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #e0d0c0;
-      font-family: 'Spectral', serif;
-      overflow-x: hidden;
-    }
-
-    header {
-      background: linear-gradient(to right, #0a0a0a, #1a0a0a);
-      padding: 1rem 2rem;
-      text-align: center;
-      color: #f11;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border-bottom: 1px solid #300;
-    }
-
-    .vault {
-      padding: 2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .insight {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-    }
-
-    .next {
-      display: inline-block;
-      margin-top: 2rem;
-      background: #111;
-      color: #f33;
-      padding: 1rem 2rem;
-      border: 1px solid #f33;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.2s ease;
-    }
-
-    .next:hover {
-      background: #f33;
-      color: #000;
-    }
-
-    .countdown {
-      font-size: 1.2rem;
-      margin-top: 2rem;
-      color: #ccc;
-      text-align: center;
-    }
-
-    .adsense-box {
-      width: 100%;
-      margin: 3rem 0;
-      background: #111;
-      height: 100px;
-      border: 2px dashed #444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      font-size: 0.8rem;
-      color: #333;
-      text-align: center;
-      padding: 2rem 0;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shadow Vault</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="vault.js" defer></script>
+  <script src="adsense.js" defer></script>
 </head>
 <body>
-
-  <header>
-    SEB SHADOW SECRETS // THE VAULT
-  </header>
-
-  <div class="vault">
-    <div class="insight">
-      <strong>SECRET #01:</strong><br />
-      The moment you feel guilt for saying no, they've won. <br /><br />
-      Manipulators weaponize your empathy. They don’t want love. They want control wrapped in kindness.
-    </div>
-
-    <div class="adsense-box">
-      [ Your AdSense code goes here ]
-    </div>
-
-    <a href="" class="next" onclick="reloadPage()">UNLOCK NEXT SECRET →</a>
-
-    <div class="countdown" id="countdown"></div>
+  <div id="vault-container">
+    <div id="insight-title"></div>
+    <div id="insight-content"></div>
+    <div id="cta-button">UNLOCK NEXT SECRET →</div>
+    <div id="timer">This page expires in 5:00...</div>
+    <div id="ad-container"><!-- AdSense will inject here --></div>
   </div>
-
-  <footer>
-    © 2025 SebShadowSecrets. All rights reserved. Educational purposes only.
-  </footer>
-
-  <script>
-    function reloadPage() {
-      location.reload();
-    }
-
-    const countdown = document.getElementById('countdown');
-    let seconds = 300; // 5 minutes
-
-    function updateCountdown() {
-      const mins = Math.floor(seconds / 60);
-      const secs = seconds % 60;
-      countdown.textContent = `Page expires in ${mins}:${secs.toString().padStart(2, '0')}`;
-      if (seconds > 0) seconds--;
-      else location.reload(); // force ad reload
-    }
-
-    setInterval(updateCountdown, 1000);
-  </script>
-
 </body>
 </html>

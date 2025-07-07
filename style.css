@@ -1,0 +1,25 @@
+body {
+  background-color: #000;
+  color: #ff0033;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+#vault-container {
+  max-width: 90%;
+}
+#cta-button {
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#timer {
+  margin-top: 10px;
+  font-size: 0.9em;
+  opacity: 0.7;
+}
