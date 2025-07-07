@@ -20,6 +20,7 @@
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const audio = document.getElementById('bg-audio');
+      audio.volume = 0.07; // 👈 Set volume to 7% (perfect trance level)
       audio.muted = false;
       const playPromise = audio.play();
       if (playPromise !== undefined) {
