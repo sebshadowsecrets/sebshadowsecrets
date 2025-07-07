@@ -13,23 +13,45 @@
 </head>
 
 <body>
+  <audio id="bg-audio" loop autoplay>
+    <source src="glitch_cult_ambientFX_loop_32s.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('bg-audio');
+      audio.muted = false;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          const unlock = () => {
+            audio.play().catch(() => {});
+            document.removeEventListener('click', unlock);
+            document.removeEventListener('touchstart', unlock);
+          };
+          document.addEventListener('click', unlock);
+          document.addEventListener('touchstart', unlock);
+        });
+      }
+    });
+  </script>
+
   <div id="vault-container">
     <div id="insight-title"></div>
     <div id="insight-content"></div>
     <div id="cta-button">UNLOCK NEXT SECRET →</div>
     <div id="timer">This page expires in 5:00...</div>
-<div id="ad-container">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5000547699906372"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
+    <div id="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5000547699906372"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
   </div>
 </body>
 </html>
