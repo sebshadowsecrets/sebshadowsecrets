@@ -1,10 +1,6 @@
 let current = 0;
 let insights = [];
 
-// Define hardcoded redirect index after final page
-const RESET_PAGE_INDEX = 6; // 007 (arrays are 0-based)
-const LAST_INDEX_BEFORE_RESET = 99; // 100th item (0-based index)
-
 fetch('insights.json')
   .then(res => res.json())
   .then(data => {
@@ -15,16 +11,19 @@ fetch('insights.json')
 
 function showInsight() {
   const insight = insights[current];
+
+  if (!insight) {
+    // Loop back to first insight if index out of range
+    current = 0;
+    showInsight();
+    return;
+  }
+
   document.getElementById("insight-title").innerText = insight.title;
   document.getElementById("insight-content").innerText = insight.content;
-  document.getElementById("cta-button").onclick = () => {
-    // Loop logic: after index 99, jump to index 6
-    if (current >= LAST_INDEX_BEFORE_RESET) {
-      current = RESET_PAGE_INDEX;
-    } else {
-      current += 1;
-    }
 
+  document.getElementById("cta-button").onclick = () => {
+    current = (current + 1) % insights.length;
     showInsight();
     resetTimer();
     refreshAd();
