@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ✅ Google AdSense loader -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5000547699906372"
     crossorigin="anonymous"></script>
 
@@ -14,44 +13,12 @@
 </head>
 
 <body>
-  <!-- 🔊 Cult Hypnosis Ambient Sound -->
-  <audio id="bg-audio" loop autoplay muted>
-    <source src="glitch_cult_ambientFX_loop_32s.mp3" type="audio/mpeg" />
-  </audio>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById('bg-audio');
-
-      const unlock = () => {
-        audio.volume = 0.07; // 🎧 Perfect trance level
-        audio.muted = false;
-        audio.play().catch(() => {});
-        document.removeEventListener('click', unlock);
-        document.removeEventListener('touchstart', unlock);
-      };
-
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            audio.volume = 0.07;
-            audio.muted = false;
-          })
-          .catch(() => {
-            document.addEventListener('click', unlock);
-            document.addEventListener('touchstart', unlock);
-          });
-      }
-    });
-  </script>
-
   <!-- 🕳️ The Vault -->
   <div id="vault-container">
-    <div id="insight-title"></div>
-    <div id="insight-content"></div>
-    <div id="cta-button">UNLOCK NEXT SECRET →</div>
-    <div id="timer">This page expires in 5:00...</div>
+    <div id="insight-title" style="color: red;"></div>
+    <div id="insight-content" style="color: red;"></div>
+    <div id="cta-button" style="color: red; cursor: pointer;">UNLOCK NEXT SECRET →</div>
+    <div id="timer" style="color: darkred;">This page expires in 5:00...</div>
 
     <!-- 💰 AdSense Slot -->
     <div id="ad-container">
