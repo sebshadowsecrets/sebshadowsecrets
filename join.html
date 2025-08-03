@@ -4,19 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Join – ShadowSecrets</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     .signup-form {
-      max-width: 500px;
+      max-width: 540px;
       margin: 2em auto;
       text-align: center;
     }
+
     .signup-form input[type="email"] {
       padding: 10px;
       width: 70%;
       margin-bottom: 1em;
       border: 1px solid #ccc;
     }
+
     .signup-form input[type="submit"] {
       padding: 10px 20px;
       background: black;
@@ -24,8 +25,30 @@
       border: none;
       cursor: pointer;
     }
+
     .signup-form input[type="submit"]:hover {
       background: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin: 2em 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4em;
+      padding: 1em;
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
 </head>
@@ -39,11 +62,11 @@
   </nav>
 
   <main>
-    <h1>Join the Inner Circle</h1>
-    <p style="text-align:center">Get exclusive insights and Vault drops straight to your inbox.</p>
+    <h1 style="text-align: center;">Join the Inner Circle</h1>
+    <p style="text-align: center;">Get exclusive insights and Vault drops straight to your inbox.</p>
 
     <div class="signup-form">
-      <form method="POST" action="#">
+      <form method="GET" action="#">
         <input type="email" name="email" placeholder="Enter your email" required />
         <br>
         <input type="submit" value="Unlock Access" />
