@@ -2,47 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog – ShadowSecrets</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShadowSecrets Blog</title>
   <style>
-    .blog-post {
-      margin: 2em 0;
-      padding: 1em;
-      border-top: 1px solid #ccc;
+    body {
+      font-family: Georgia, serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #222;
     }
-    .blog-post a {
-      font-weight: bold;
-      font-size: 1.2em;
+    article {
+      margin-bottom: 60px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 40px;
     }
-    .blog-post .meta {
-      font-size: 0.9em;
-      color: #666;
+    h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 40px 0;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="vault.html">Vault</a>
-    <a href="blog.html">Blog</a>
-  </nav>
 
-  <main>
-    <h1>ShadowSecrets Blog</h1>
-    <p class="subtitle">Fresh psychological drops and decoding sessions:</p>
+  <h1>ShadowSecrets Blog</h1>
 
-    {% for post in site.posts %}
-      <div class="blog-post">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <div class="meta">{{ post.date | date: "%B %d, %Y" }}</div>
-        <p>{{ post.excerpt }}</p>
-      </div>
-    {% endfor %}
-  </main>
+  <article>
+    <h2>Walking Through the Wilderness: The Power of Solitude in Cultivating Wisdom</h2>
+    <p>In the modern world it’s easy to believe that growth comes from doing more – reading another book, taking another course or joining another group chat... [continue full post #1 here]</p>
+  </article>
 
-  <footer>
-    <p>© 2025 ShadowSecrets. All rights reserved.</p>
-  </footer>
+  <article>
+    <h2>From Chaos to Clarity: Reverse‑Distilling Great Thinkers for Modern Self‑Mastery</h2>
+    <p>The Shadow Vault was built on a simple idea: rather than blindly copying philosophers and mystics, we reverse‑distill their most powerful concepts... [full post #2]</p>
+  </article>
+
+  <article>
+    <h2>The Art of Self‑Sufficiency: Lessons from Jim Rohn, Jordan Peterson and Brian Tracy</h2>
+    <p>Self‑sufficiency isn’t synonymous with isolation. It is the ability to meet your needs and direct your path regardless of external circumstances... [full post #3]</p>
+  </article>
+
+  <article>
+    <h2>Building Your Inner Philosopher: A Guide to Creative Thinking and Self‑Interrogation</h2>
+    <p>Every human is born with the capacity to reason, but few cultivate it deliberately. Great philosophers didn’t emerge fully formed... [full post #4]</p>
+  </article>
+
+  <article>
+    <h2>Walking Through the Wilderness: The Power of Solitude in Cultivating Wisdom</h2>
+    <p>In the modern world it’s easy to believe that growth comes from doing more – reading another book, taking another course or joining another group chat.  While those inputs have their place, the deepest insights often surface when you deliberately step away from the noise.  Friedrich Nietzsche famously wrote about climbing mountains to gain perspective, but he wasn’t simply climbing for sport; he was seeking a place where he could hear his own thoughts.  In many ways, this is the essence of ShadowSecrets: draw inspiration from masters, then go out and listen to yourself.
+When you finish a challenging article or an inspiring lecture, resist the urge to immediately scroll for more.  Instead, close the book, pocket the phone and go for a walk.  Jim Rohn, one of the great personal development mentors of the 20th century, taught that ideas need time to germinate.  By walking alone in a forest or along a quiet street you give your mind space to digest, debate and reorganise what you’ve just learned.  What begins as a jumble of other people’s sentences turns into something uniquely yours.  This is not laziness; it’s active processing, akin to a cell absorbing nutrients and converting them into energy.
+Solitude isn’t always comfortable.  Michel Foucault warned that isolation can feel like confinement, yet it can also release us from other people’s agendas.  Franz Kafka’s characters often confront the absurdity of bureaucratic systems, reflecting his own sense of being trapped.  When you’re out walking, you might feel the weight of the world pressing in, but with each step you strip away layers of expectation until you’re left with simple questions: What do I believe?  What matters now?  Those questions are the starting points of personal philosophy.
+A quiet walk can also reveal patterns you miss when distracted.  Jordan Peterson advises his students to “clean up your room” and bring order to their immediate surroundings; hiking through nature accomplishes a similar reordering.  The rhythm of your breath and the cadence of your steps settle your nervous system.  Problems that seemed unsolvable in front of a screen become manageable when you’re surrounded by trees.  It’s not that the forest gives you answers; it’s that you create mental space for answers to emerge.
+ShadowSecrets exists to remind you that you are allowed to take that space.  The community is here when you need it, but don’t forget that some of your most important conversations will be the ones you have with yourself.  Step outside, leave the headphones at home and rediscover the wisdom that waits in silence.</p>
+  </article>
+
 </body>
 </html>
