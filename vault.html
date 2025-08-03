@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vault | SebShadowSecrets</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="vault_fragments.js"></script>
+  <script>
+    function getFragmentNumber() {
+      const params = new URLSearchParams(window.location.search);
+      const page = parseInt(params.get("page")) || 7;
+      return Math.min(Math.max(page, 7), 100);
+    }
+
+    function showFragment() {
+      const num = getFragmentNumber();
+      const frag = fragments[num];
+      document.getElementById("fragment-number").innerText = "Fragment " + String(num).padStart(3, '0');
+      document.getElementById("fragment-text").innerText = frag || "Unknown fragment.";
+    }
+
+    function nextFragment() {
+      const current = getFragmentNumber();
+      if (current < 100) {
+        window.location.search = "?page=" + (current + 1);
+      }
+    }
+
+    window.onload = showFragment;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="fragment-number">Fragment 007</h1>
+    <div id="fragment-text" class="fragment-box"></div>
+    <button onclick="nextFragment()" class="next-btn">→ Next Insight</button>
+  </div>
+
+  <!-- AdSense Placeholder -->
+  <div class="adsense-container">
+    <!-- Replace with actual AdSense snippet -->
+    <p class="ads-placeholder">[Ad loads here]</p>
+  </div>
+</body>
+</html>
