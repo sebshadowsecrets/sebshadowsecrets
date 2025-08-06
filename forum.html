@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop – ShadowSecrets</title>
+  <title>Forum – ShadowSecrets</title>
   <!-- Google AdSense verification code -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5000547699906372" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
@@ -17,9 +17,19 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <main class="container">
-    <h1>Shop</h1>
-    <p>Psy‑gear for perception warriors. Coming soon.</p>
+  <main class="container" id="forum-page">
+    <h1>Forum</h1>
+    <p>Welcome to the ShadowSecrets forum. Share your own philosophies, discuss blog posts and vault fragments, and connect with other seekers. To post or reply you must be a subscriber.</p>
+    <div id="forum-login-msg" style="display:none; margin-bottom:1rem;">
+      Subscribe to participate in discussions. <a href="join.html">Join the Inner Circle</a>.
+    </div>
+    <form id="new-thread-form" style="margin-bottom:2rem;">
+      <h3>Start a new discussion</h3>
+      <input type="text" name="title" placeholder="Thread title" style="width:100%;margin-bottom:0.5rem;" required />
+      <textarea name="content" placeholder="Your message" rows="4" style="width:100%;margin-bottom:0.5rem;" required></textarea>
+      <button type="submit" class="btn">Create Thread</button>
+    </form>
+    <div id="forum-threads"></div>
   </main>
   <div class="adsense-container">
     <p>[Ad loads here]</p>

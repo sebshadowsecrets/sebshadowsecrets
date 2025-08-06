@@ -1,54 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vault | SebShadowSecrets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vault – ShadowSecrets</title>
+  <!-- AdSense verification code -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5000547699906372" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
+  <!-- Load fragments for the vault -->
   <script defer src="vault_fragments.js"></script>
   <script>
+    // Helper functions to determine which fragment to display
     function getFragmentNumber() {
       const params = new URLSearchParams(window.location.search);
-      const page = parseInt(params.get("page")) || 7;
-      return Math.min(Math.max(page, 7), 100);
+      const page = parseInt(params.get('page')) || 7;
+      return Math.min(Math.max(page, 7), fragments.length);
     }
-
     function showFragment() {
       const num = getFragmentNumber();
-      const frag = fragments[num];
-      document.getElementById("fragment-number").innerText = "Fragment " + String(num).padStart(3, '0');
-      document.getElementById("fragment-text").innerText = frag || "Unknown fragment.";
+      const frag = fragments[num - 7];
+      document.getElementById('fragment-number').innerText = 'Fragment ' + String(num).padStart(3, '0');
+      document.getElementById('fragment-text').innerText = frag || 'Unknown fragment.';
     }
-
     function nextFragment() {
       const current = getFragmentNumber();
-      if (current < 100) {
-        window.location.search = "?page=" + (current + 1);
+      if (current < fragments.length + 6) {
+        window.location.search = '?page=' + (current + 1);
       }
     }
-
     window.onload = showFragment;
   </script>
 </head>
 <body>
-  <nav>
-  <a href="index.html">Home</a> |
-  <a href="vault.html">Vault</a> |
-  <a href="blog.html">Blog</a> |
-  <a href="about.html">About</a> |
-</nav>
-
-  <div class="container">
-    <h1 id="fragment-number">Fragment 007</h1>
-    <div id="fragment-text" class="fragment-box"></div>
-    <button onclick="nextFragment()" class="next-btn">→ Next Insight</button>
-  </div>
-
-  <!-- AdSense Placeholder -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="vault.html">Vault</a>
+    <a href="blog.html">Blog</a>
+    <a href="forum.html">Forum</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main class="container">
+    <h1 id="fragment-number"></h1>
+    <div id="fragment-text"></div>
+    <button onclick="nextFragment()" class="btn">→ Next Insight</button>
+  </main>
   <div class="adsense-container">
-    <!-- Replace with actual AdSense snippet -->
-    <p class="ads-placeholder">[Ad loads here]</p>
+    <p>[Ad loads here]</p>
   </div>
+  <div id="vault-comment" class="comment-section" data-page="">
+    <h3>Comments</h3>
+    <div class="comments"></div>
+    <p class="login-msg" style="display:none;">Subscribe to comment. <a href="join.html">Join the Inner Circle</a>.</p>
+    <form class="comment-form">
+      <textarea name="comment" placeholder="Add a comment"></textarea>
+      <button type="submit" class="btn">Post</button>
+    </form>
+  </div>
+  <footer>
+    <p>© 2025 ShadowSecrets. All rights reserved. |
+      <a href="privacy.html">Privacy</a> |
+      <a href="terms.html">Terms</a>
+    </p>
+  </footer>
+  <script>
+    // Set a unique page key for comments based on the fragment number
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const page = parseInt(params.get('page')) || 7;
+      document.getElementById('vault-comment').setAttribute('data-page', 'vault-' + page);
+    });
+  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
