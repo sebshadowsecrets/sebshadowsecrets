@@ -24,7 +24,7 @@ The goal is not to produce dogma but to create tools. ShadowSecrets offers fragm
 
   {
     title: "The Rally Race Inside You",
-    date: "2025-01-01",
+    date: "2025-06-02",
     content: `Some of us don’t live life like a calm walk down a well‑marked trail.
 Some of us are in a rally race.
 
@@ -172,7 +172,7 @@ You used to be lost too.`
   },
   {
     title: "Walking Through the Wilderness: The Power of Solitude in Cultivating Wisdom",
-    date: "2025-02-01",
+    date: "2025-06-01",
     content: `The storm isn’t the problem.
 Your sail is.
 
