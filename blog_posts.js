@@ -50,7 +50,7 @@ Brian Tracy is known for practical strategies for productivity and goal‑settin
 Combining these perspectives yields a blueprint: establish daily rituals of study and reflection (Rohn), accept full responsibility for your mental landscape (Peterson) and set clear, actionable goals for your intellectual development (Tracy). This triad creates momentum. As you move through the Vault or engage in the forum, you’re not grazing randomly; you’re following a self‑directed curriculum designed to increase your independence.
 
 Remember that self‑sufficiency isn’t about never asking for help. It’s about ensuring that when you seek support, you do so from a place of strength rather than desperation. Use the community as a sounding board, but don’t abdicate your thinking to it. When you encounter opposing views, treat them as training partners. Refining your ability to articulate and defend your positions will make you more self‑sufficient, not less. Ultimately, the discipline of Jim Rohn, the responsibility of Jordan Peterson and the goal‑orientation of Brian Tracy converge to create a resilient mindset ready for whatever challenges arise.`
-}
+},
   {
     title: "From Chaos to Clarity",
     date: "2025-06-03",
