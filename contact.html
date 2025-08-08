@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – ShadowSecrets</title>
-  <!-- Google AdSense verification code -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5000547699906372" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,31 +15,51 @@
     <a href="blog.html">Blog</a>
     <a href="forum.html">Forum</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" aria-current="page">Contact</a>
   </nav>
+
   <main class="container">
     <h1>Contact Us</h1>
-    <p>If you have any questions, comments or just want to share your thoughts, we’d love to hear from you. Reach us via email or fill out the form below and we’ll get back to you as soon as possible.</p>
-    <p><strong>Email:</strong> <a href="mailto:info@sebshadowsecrets.com">info@sebshadowsecrets.com</a></p>
-    <form>
+    <p>Questions, collabs, licensing, or press — reach out. We read everything.</p>
+    <p><strong>Email:</strong> <a href="mailto:contact@sebshadowsecrets.com" rel="noopener noreferrer">contact@sebshadowsecrets.com</a></p>
+
+    <!-- FormSubmit will email to contact@sebshadowsecrets.com (which forwards to your Gmail) -->
+    <form action="https://formsubmit.co/contact@sebshadowsecrets.com" method="POST">
+      <!-- FormSubmit options -->
+      <input type="hidden" name="_subject" value="New message from ShadowSecrets contact form">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://sebshadowsecrets.com/thank-you.html">
+      <!-- simple spam honeypot -->
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
+
       <label for="name">Name</label><br />
-      <input type="text" id="name" name="name" style="width:100%;margin-bottom:0.5rem;" /><br />
+      <input type="text" id="name" name="name" autocomplete="name" required
+             style="width:100%;margin-bottom:0.5rem;" /><br />
+
       <label for="email">Email</label><br />
-      <input type="email" id="email" name="email" style="width:100%;margin-bottom:0.5rem;" /><br />
+      <input type="email" id="email" name="email" autocomplete="email" required
+             style="width:100%;margin-bottom:0.5rem;" /><br />
+
       <label for="message">Message</label><br />
-      <textarea id="message" name="message" rows="5" style="width:100%;margin-bottom:0.5rem;"></textarea><br />
+      <textarea id="message" name="message" rows="5" required
+                style="width:100%;margin-bottom:0.5rem;"></textarea><br />
+
       <button type="submit" class="btn">Send Message</button>
     </form>
   </main>
+
   <div class="adsense-container">
     <p>[Ad loads here]</p>
   </div>
+
   <footer>
     <p>© 2025 ShadowSecrets. All rights reserved. |
       <a href="privacy.html">Privacy</a> |
       <a href="terms.html">Terms</a>
     </p>
   </footer>
+
   <script src="scripts.js"></script>
 </body>
 </html>
