@@ -63,8 +63,6 @@ Finally, test your synthesis against lived experience. Brian Tracy teaches that 
 The goal is not to produce dogma but to create tools. ShadowSecrets offers fragments as starting points, but you are the distiller. Use the forum to compare notes and challenge assumptions, not to anoint gurus. Remember that the thinkers we reference were themselves synthesists, taking fragments of ancient wisdom and making them new. You stand in the same tradition. By reverse‑distilling their work you move from chaos to clarity and build a philosophy that is living, adaptable and entirely your own.
 .`
   },
-
-
   {
     title: "The Rally Race Inside You",
     date: "2025-06-02",
